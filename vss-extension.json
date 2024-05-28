@@ -1,0 +1,39 @@
+{
+    "manifestVersion": 1,
+    "id": "download-and-extract-tar",
+    "name": "Download and Extract Tar",
+    "version": "1.0.0",
+    "publisher": "your-publisher-id",
+    "targets": [
+      {
+        "id": "Microsoft.VisualStudio.Services"
+      }
+    ],
+    "description": "A task to download a tar file from a URL and extract it.",
+    "categories": [
+      "Utility"
+    ],
+    "files": [
+      {
+        "path": "download_and_extract.py",
+        "addressable": true
+      },
+      {
+        "path": "task.json",
+        "addressable": true
+      }
+    ],
+    "contributions": [
+      {
+        "id": "download-and-extract-tar-task",
+        "type": "ms.vss-distributed-task.task",
+        "targets": [
+          "ms.vss-distributed-task.tasks"
+        ],
+        "properties": {
+          "name": "task.json"
+        }
+      }
+    ]
+  }
+  

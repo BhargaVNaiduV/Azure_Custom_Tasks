@@ -1,0 +1,43 @@
+{
+    "id": "your-task-id",
+    "name": "DownloadAndExtract",
+    "friendlyName": "Download and Extract Tar",
+    "description": "Downloads a tar file from a URL and extracts it.",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "visibility": [
+      "Build",
+      "Release"
+    ],
+    "author": "Your Name",
+    "version": {
+      "Major": 1,
+      "Minor": 0,
+      "Patch": 0
+    ],
+    "instanceNameFormat": "Download and extract tar from $(downloadUrl)",
+    "inputs": [
+      {
+        "name": "downloadUrl",
+        "type": "string",
+        "label": "Download URL",
+        "defaultValue": "",
+        "required": true,
+        "helpMarkDown": "URL of the tar file to download."
+      },
+      {
+        "name": "outputDirectory",
+        "type": "string",
+        "label": "Output Directory",
+        "defaultValue": "$(System.DefaultWorkingDirectory)/extracted",
+        "required": true,
+        "helpMarkDown": "Directory to extract the tar file contents."
+      }
+    ],
+    "execution": {
+      "Python3": {
+        "target": "download_and_extract.py"
+      }
+    }
+  }
+  

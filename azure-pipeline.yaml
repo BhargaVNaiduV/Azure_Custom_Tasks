@@ -1,0 +1,17 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: Build
+  steps:
+  - task: your-publisher-id.download-and-extract-tar-task@1
+    inputs:
+      downloadUrl: 'https://example.com/file.tar'
+      outputDirectory: '$(Build.ArtifactStagingDirectory)/extracted'
+
+  - script: |
+      cat $(Build.ArtifactStagingDirectory)/extracted/input.json
+    displayName: 'Use input.json in pipeline'
